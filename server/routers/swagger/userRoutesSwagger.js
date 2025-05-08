@@ -1,8 +1,30 @@
-// userRoutesSwagger.js
+// -------------------- user/register -----------------------
+
 /**
  * @swagger
- * tags:
- *   name: User
- *   description: Управление пользователями
+ * /user/register:
+ *   post:   
+ *     summary: Регистрация нового пользователя
+ *     tags: 
+ *       - User
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               fullname:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Пользователь успешно зарегистрирован
+ *       400:
+ *         description: Ошибка валидации
+ *       500:
+ *         description: Ошибка сервера
  */
-export default {}; // No need for an actual function; Swagger comments are auto-processed

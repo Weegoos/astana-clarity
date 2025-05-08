@@ -20,14 +20,18 @@ const options = {
         },
         security: [{ bearerAuth: [] }] // Глобальное применение авторизации
     },
-    apis: ["./routers/*.js", "./models/*.js"]
+    apis: [
+        "./routers/**/*.js",       // Пути до всех роутеров
+        "./models/**/*.js",        // Пути до всех моделей
+        "./swagger/**/*.js"        // Путь до папки с Swagger-комментариями
+    ]
 };
 
 const swaggerSpec = swaggerJSDoc(options);
 
 const setupSwagger = (app) => {
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    console.log(`📄 Swagger доступен по адресу: http://localhost:${process.env.PORT || 3000}/api-docs`);
+    console.log(`📄 Swagger доступен по адресу: http://localhost:${process.env.PORT || 8000}/api-docs`);
 };
 
 export default setupSwagger;
