@@ -1,16 +1,13 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    />
-    <div class="bg-red-500">Batyr</div>
-  </q-page>
+<div>Batyr</div>
 </template>
 
-<script setup>
-defineOptions({
-  name: "IndexPage",
-});
+<script>
+export default {
+
+}
 </script>
+
+<style>
+
+</style>
